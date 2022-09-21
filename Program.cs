@@ -10,11 +10,17 @@ if (isNumber == false)
     return;
 }
 
-
 string[] array = new string[m];
 
 string[] secondArray = new string[m];
 
+CreateArray(array);
+
+WriteArray(array);
+
+CreateSecondArray(array, secondArray);
+
+WriteArray(secondArray);
 
 
 void CreateArray(string[] array)
@@ -27,7 +33,6 @@ void CreateArray(string[] array)
     }
 }
 
-
 void WriteArray(string[] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -38,4 +43,17 @@ void WriteArray(string[] array)
     }
 }
 
-
+string[] CreateSecondArray(string[] array, string[] secondArray)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            secondArray[count] = array[i];
+            count++;
+        }
+    }
+    Console.WriteLine();
+    return secondArray;
+}
